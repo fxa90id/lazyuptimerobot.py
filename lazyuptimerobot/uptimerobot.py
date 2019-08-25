@@ -55,7 +55,6 @@ class UptimeRobot(object):
     @api_call
     def getAccountDetails(self):
         """Account details (max number of monitors that can be added and number of up/down/paused monitors) can be grabbed using this method."""
-        pass
 
     @api_call
     def getMonitors(self):
@@ -93,7 +92,6 @@ class UptimeRobot(object):
             search - optional (a keyword of your choice to search within url and friendly_name and get filtered results)
 
         """
-        pass
 
     @api_call
     def newMonitor(self):
@@ -109,7 +107,7 @@ class UptimeRobot(object):
             keyword_value - optional (required for keyword monitoring)
             interval - optional (in seconds)
             http_username - optional
-            http_password - optional
+            http_word - optional
             alert_contacts - optional (the alert contacts to be notified when the monitor goes up/down.Multiple alert_contact>ids can be sent like alert_contacts=457_0_0-373_5_0-8956_2_3 where alert_contact>ids are seperated with - and threshold + recurrence are seperated with _. For ex: alert_contacts=457_5_0 refers to 457 being the alert_contact>id, 5 being the threshold and 0 being the recurrence. As the threshold and recurrence is only available in the Pro Plan, they are always 0 in the Free Plan)
             mwindows - optional (the maintenance windows for the monitor which can be mentioned with their IDs like 345-2986-71)
             custom_http_headers - optional (must be sent as a JSON object)
@@ -117,7 +115,6 @@ class UptimeRobot(object):
             ignore_ssl_errors - optional (for ignoring SSL certificate related errors)
 
         """
-        pass
 
     @api_call
     def editMonitor(self):
@@ -135,7 +132,7 @@ class UptimeRobot(object):
             interval - optional (in seconds)
             status - optional (0 for pause, 1 for resume)
             http_username - optional
-            http_password - optional
+            http_word - optional
             alert_contacts - optional (the alert contacts to be notified when the monitor goes up/down.Multiple alert_contact>ids can be sent like alert_contacts=457_0_0-373_5_0-8956_2_3 where alert_contact>ids are seperated with - and threshold + recurrence are seperated with _. For ex: alert_contacts=457_5_0 refers to 457 being the alert_contact>id, 0 being the threshold and 0 being the recurrence. As the threshold and recurrence is only available in the Pro Plan, they are always 0 in the Free Plan)
             mwindows - optional (the maintenance windows for the monitor which can be mentioned with their IDs like 345-2986-71)
             custom_http_headers - optional (must be sent as a JSON object)
@@ -143,7 +140,6 @@ class UptimeRobot(object):
             ignore_ssl_errors - optional (for ignoring SSL certificate related errors)
 
         """
-        pass
 
     @api_call
     def deleteMonitor(self):
@@ -153,7 +149,6 @@ class UptimeRobot(object):
             id - required (the ID of the monitor to be deleted)
 
         """
-        pass
 
     @api_call
     def resetMonitor(self):
@@ -163,7 +158,6 @@ class UptimeRobot(object):
             id - required (the ID of the monitor to be reset)
 
         """
-        pass
 
     @api_call
     def getAlertContacts(self):
@@ -175,7 +169,6 @@ class UptimeRobot(object):
             limit - optional (used for pagination. Defines the max number of records to return for the response. Default and max. is 50)
 
         """
-        pass
 
     @api_call
     def newAlertContact(self):
@@ -189,7 +182,6 @@ class UptimeRobot(object):
             friendly_name - optional
 
         """
-        pass
 
     @api_call
     def editAlertContact(self):
@@ -201,7 +193,6 @@ class UptimeRobot(object):
             value - optional (can only be used if it is a web-hook alert contact)
 
         """
-        pass
 
     @api_call
     def editAlertContact(self):
@@ -211,7 +202,6 @@ class UptimeRobot(object):
             id - required
 
         """
-        pass
 
     @api_call
     def getMWindows(self):
@@ -223,7 +213,6 @@ class UptimeRobot(object):
             limit - optional (used for pagination. Defines the max number of records to return for the response. Default and max. is 50)
 
         """
-        pass
 
     @api_call
     def newMWindow(self):
@@ -237,7 +226,6 @@ class UptimeRobot(object):
             duration - required (how many minutes the maintenance window will be active for)
 
         """
-        pass
 
     @api_call
     def newMWindow(self):
@@ -251,7 +239,6 @@ class UptimeRobot(object):
             duration - optional (required how many minutes the maintenance window will be active for)
 
         """
-        pass
 
     @api_call
     def newMWindow(self):
@@ -261,7 +248,6 @@ class UptimeRobot(object):
             id - required
 
         """
-        pass
 
     @api_call
     def getPSPs(self):
@@ -273,7 +259,6 @@ class UptimeRobot(object):
             limit - optional (used for pagination. Defines the max number of records to return for the response. Default and max. is 50)
 
         """
-        pass
 
     @api_call
     def newPSP(self):
@@ -284,12 +269,11 @@ class UptimeRobot(object):
             friendly_name - required
             monitors - required (The monitors to be displayed can be sent as 15830-32696-83920. Or 0 for displaying all monitors)
             custom_domain - optional
-            password - optional
+            word - optional
             sort - optional
             hide_url_links - optional (for hiding the Uptime Robot links and only available in the Pro Plan)
             status - optional
         """
-        pass
 
     @api_call
     def editPSP(self):
@@ -300,13 +284,12 @@ class UptimeRobot(object):
             friendly_name - optional
             monitors - optional (The monitors to be displayed can be sent as 15830-32696-83920. Or 0 for displaying all monitors)
             custom_domain - optional
-            password - optional
+            word - optional
             sort - optional
             hide_url_links - optional (for hiding the Uptime Robot links and only available in the Pro Plan)
             status - optional
 
         """
-        pass
 
     @api_call
     def deletePSP(self):
@@ -316,7 +299,6 @@ class UptimeRobot(object):
             id - required
 
         """
-        pass
 
 
 if __name__ == "__main__":

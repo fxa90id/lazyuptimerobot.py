@@ -13,8 +13,15 @@ import requests
 def api_call(method):
     def _dummy(self, **kwargs):
         api_endpoint_url = urljoin(self.api_url, method.__name__)
-        f = self._gen_api_call(api_endpoint_url)
-        return f(**kwargs)
+        headers = {
+            'cache-control': "no-cache",
+            'content-type': "application/x-www-form-urlencoded"
+        }
+        payload = {} or kwargs
+        payload.update(self.payload)
+        payload = urlencode(payload)
+        resp = requests.request("POST", api_endpoint_url, data=payload, headers=headers)
+        return resp
 
     _dummy.__doc__ = method.__doc__
     _dummy.__name__ = method.__name__
@@ -33,24 +40,6 @@ class UptimeRobot(object):
         self.api_key = api_key
         self.payload = {'api_key': self.api_key,
                         'format': format}
-
-    def _build_payload(self, params):
-        payload = {} or params
-        payload.update(self.payload)
-        return urlencode(payload)
-
-    def _gen_api_call(self, api_endpoint_url):
-        def __inner(**kwargs):
-            headers = {
-                'cache-control': "no-cache",
-                'content-type': "application/x-www-form-urlencoded"
-            }
-            payload = self._build_payload(kwargs)
-            print(api_endpoint_url, payload, headers)
-            resp = requests.request("POST", api_endpoint_url, data=payload, headers=headers)
-            return resp
-
-        return __inner
 
     @api_call
     def getAccountDetails(self):

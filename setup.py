@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="lazyuptimerobot.py",
-    version="1.0.1",
+    version="1.0.3",
     author="Michal Frontczak",
     author_email="michaljev@o2.pl",
     description="API Client for uptimerobot.com",
